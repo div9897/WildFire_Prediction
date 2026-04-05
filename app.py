@@ -7,7 +7,10 @@ import os
 # -------------------------------
 # ✅ Load model from correct path
 # -------------------------------
-MODEL_PATH = r"d:\WildFire Project 1\WildFire Project\notebooks\wildfire_risk_model.pkl"
+
+# This works both locally AND on Streamlit Cloud
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "wildfire_risk_model.pkl")
 
 if not os.path.exists(MODEL_PATH):
     st.error(f"❌ Model file not found at: {MODEL_PATH}")
